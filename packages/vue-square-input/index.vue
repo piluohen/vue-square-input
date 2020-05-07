@@ -1,6 +1,5 @@
 <template>
   <div class="vue-square-input">
-    <!-- {{length}}--{{list}} -->
     <div class="vue-square-input_list">
       <div
         class="vue-square-input_item"
@@ -10,17 +9,19 @@
         @click="handleItemClick(item, index)"
       >
         <span v-show="item">{{ item }}</span>
-        <span v-show="model.length + keepValue.length === index && showCursor" class="vue-square-input_cursor"></span>
+        <span v-show="model.length === index && showCursor" class="vue-square-input_cursor"></span>
       </div>
     </div>
     <input
       ref="input"
       class="vue-square-input_input"
       type="text"
-      :maxlength="maxlength"
       v-model="model"
+      :maxlength="maxlength"
+      :readonly="readonly"
       @focus="handleFocus"
       @blur="handleBlur"
+      @keyup="handleKeyup"
     />
   </div>
 </template>
@@ -32,10 +33,6 @@ export default {
       type: String,
       default: ''
     },
-    keepValue: {
-      type: String,
-      default: ''
-    },
     length: {
       type: Number,
       default: 6
@@ -43,11 +40,16 @@ export default {
     isUpperCase: {
       type: Boolean,
       default: false
+    },
+    readonly: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      showCursor: false
+      showCursor: false,
+      oldVal: this.value
     }
   },
   computed: {
@@ -57,7 +59,7 @@ export default {
       }
     },
     maxlength() {
-      return this.length - this.keepValue.length
+      return this.length
     },
     model: {
       get() {
@@ -66,28 +68,52 @@ export default {
       set(val) {
         const value = this.isUpperCase ? val.toUpperCase() : val
         this.$emit('input', value)
-        if (val.length === this.length - this.keepValue.length) {
-          this.$emit('complete', `${this.keepValue}${value}`)
+        if (value.length === this.length) {
+          this.$emit('complete', value)
         }
       }
     },
     list() {
-      let values = `${this.keepValue}${this.model}`.split('')
+      let values = this.model.split('')
       return [...values, ...this.createArray(this.length - values.length)]
     }
   },
   methods: {
+    /**
+     * focus事件
+     */
     handleFocus() {
-      this.showCursor = true
+      if (!this.readonly) {
+        this.showCursor = true
+      }
     },
+    /**
+     * blur事件
+     */
     handleBlur() {
       this.showCursor = false
     },
+    /**
+     * 监听删除键
+     */
+    handleKeyup(event) {
+      if (event.keyCode === 8) {
+        if (this.model.length <= this.oldVal.length) {
+          this.model = this.oldVal
+        }
+      }
+    },
+    /**
+     * 创建数组
+     */
     createArray(length) {
       return Array.from({ length: length }).map(() => {
         return ''
       })
     },
+    /**
+     * 点击块子项
+     */
     handleItemClick(item, index) {
       this.$refs.input.focus()
       this.$emit('itemClick', { item, index })
@@ -132,8 +158,8 @@ export default {
     width: 100%;
     height: 30px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -100vh;
+    left: -100vw;
     opacity: 0;
     z-index: -2;
   }

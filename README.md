@@ -39,13 +39,11 @@ npm run bulid
 
 ## Api
 
-| 参数          |         描述         |  类型   |                       可选值                       | 必须  | 默认值 |
-| ------------- | :------------------: | :-----: | :------------------------------------------------: | :---: | ------ |
-| check         | 已选中的值，一维数组 |  Array  |                                                    | true  | []     |
-| list          |      全部的数据      |  Array  | [ {'alpha': 'A', name: '用户', value: 'Account'} ] | true  | []     |
-| multiple      |       是否多选       | Boolean |                                                    | false | false  |
-| readonly      |       是否只读       | Boolean |                                                    | false | false  |
-| showLetter    |     显示字母导航     | Boolean |                                                    | false | true   |
-| scrollOptions |       滚动行为       | Object  |                                                    | false |
+| 参数             |     描述     |  类型   | 可选值 | 必须  | 默认值 |
+| ---------------- | :----------: | :-----: | :----: | :---: | ------ |
+| value \| v-model |      值      | string  |        | true  | ''     |
+| length           |   方块个数   | number  |        | false | 6      |
+| isUpperCase      | 是否转为大写 | Boolean |        | false | false  |
+| readonly         |   是否只读   | Boolean |        | false | false  |
 
 ## 更新日志
