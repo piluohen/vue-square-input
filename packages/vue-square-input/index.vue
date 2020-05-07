@@ -70,7 +70,6 @@ export default {
         const value = this.isUpperCase ? val.toUpperCase() : val
         this.$emit('input', value)
         if (value.length === this.length) {
-          console.log('complate')
           this.$emit('complete', value)
         }
       }
