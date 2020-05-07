@@ -19,3 +19,8 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.vue-square-input-demo {
+  padding: 20px 10px;
+}
+</style>

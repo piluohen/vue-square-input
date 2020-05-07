@@ -21,6 +21,7 @@
       :readonly="readonly"
       @focus="handleFocus"
       @blur="handleBlur"
+      @keydown="handleKeyup"
       @keyup="handleKeyup"
     />
   </div>
@@ -69,6 +70,7 @@ export default {
         const value = this.isUpperCase ? val.toUpperCase() : val
         this.$emit('input', value)
         if (value.length === this.length) {
+          console.log('complate')
           this.$emit('complete', value)
         }
       }
