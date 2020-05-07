@@ -2,12 +2,9 @@
 
 一个简单的方块输入框组件，常用于短信验证码、车牌号类的输入
 
-[demo](https://piluohen.github.io/vue-square-input/index.html)<br>
-注：请 F12，选择手机模式查看，或者本地运行在手机浏览器上的查看
-
 ## 使用
 
-```
+```bash
 # 安装 npm 包
 npm install -S vue-square-input
 
@@ -24,7 +21,7 @@ Vue.use(VueSquareInput)
 
 ## 构建命令
 
-```
+```bash
 
 # 安装依赖
 npm install
@@ -45,3 +42,9 @@ npm run bulid
 | length           |   方块个数   | number  |        | false | 6      |
 | isUpperCase      | 是否转为大写 | Boolean |        | false | false  |
 | readonly         |   是否只读   | Boolean |        | false | false  |
+
+## 示例
+
+1. [demo](https://piluohen.github.io/vue-square-input/) 请 F12，选择手机模式查看
+2. 手机浏览器扫一扫下面二维码
+   ![image](./src/assets/images/demo.png)

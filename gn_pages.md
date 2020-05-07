@@ -14,5 +14,5 @@ git commit -m '部署'
 
 # 部署dist目录下的代码
 
-git subtree push --prefix dist/hn-ui origin gh-pages
+git subtree push --prefix dist origin gh-pages
 ```
