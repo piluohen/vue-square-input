@@ -14,9 +14,7 @@ export default {
     }
   },
   mounted() {},
-  methods: {
-    handleCheck(data) {}
-  }
+  methods: {}
 }
 </script>
 <style lang="scss">

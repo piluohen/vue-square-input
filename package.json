@@ -1,16 +1,16 @@
 {
   "name": "vue-square-input",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "piluohen<1012106967@qq.com>"
   },
   "homepage": "https://github.com/piluohen/vue-square-input",
   "repository": "https://github.com/piluohen/vue-square-input",
-  "description": "A Letter Nav component for Vue.js",
+  "description": "A Square Input component for Vue.js",
   "keywords": [
     "vue",
-    "letter",
-    "nav",
+    "square",
+    "input",
     "component"
   ],
   "files": [
@@ -29,7 +29,7 @@
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
-  "devDependencies": {
+  "deepDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-service": "^3.9.0",

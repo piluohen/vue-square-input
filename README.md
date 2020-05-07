@@ -47,3 +47,5 @@ npm run bulid
 | readonly         |   是否只读   | Boolean |        | false | false  |
 
 ## 更新日志
+
+### 0.1.1 首次发布
