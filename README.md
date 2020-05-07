@@ -45,7 +45,3 @@ npm run bulid
 | length           |   方块个数   | number  |        | false | 6      |
 | isUpperCase      | 是否转为大写 | Boolean |        | false | false  |
 | readonly         |   是否只读   | Boolean |        | false | false  |
-
-## 更新日志
-
-### 0.1.1 首次发布
