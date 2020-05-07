@@ -47,4 +47,5 @@ npm run bulid
 
 1. PC [demo](https://piluohen.github.io/vue-square-input/) 请 F12，选择手机模式查看
 2. 手机浏览器扫一扫下面二维码
+
    ![image](https://github.com/piluohen/vue-square-input/blob/master/src/assets/images/demo.png?raw=true)
