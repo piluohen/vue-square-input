@@ -43,7 +43,7 @@ export default {
       lpn: '豫A',
       value: '',
       length: 6,
-      readonly: false
+      readonly: 'false'
     }
   },
   mounted() {},
