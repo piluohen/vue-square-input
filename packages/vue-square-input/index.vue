@@ -129,7 +129,6 @@ export default {
   &_list {
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
   }
   &_item {
     height: 30px;
